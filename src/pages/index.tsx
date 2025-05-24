@@ -1,8 +1,9 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Hero from '../components/Hero';
-import Experience from '../components/Experience';
+import Portfolio from '../components/Portfolio/Portfolio';
+import Skills from '../components/Skills/Skills';
+import BlogPosts from '../components/BlogPosts/BlogPosts';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -11,8 +12,9 @@ export default function Home(): JSX.Element {
       title={siteConfig.title}
       description="Pierre-Antoine Caillaud - CTO & Co-founder at AI SmartTalk">
       <main>
-        <Hero />
-        <Experience />
+        <Portfolio />
+        <Skills />
+        <BlogPosts />
       </main>
     </Layout>
   );

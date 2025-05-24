@@ -1,0 +1,336 @@
+.portfolioContainer {
+  min-height: 100vh;
+  display: flex;
+  background: var(--color-background);
+  position: relative;
+}
+
+.leftColumn {
+  flex: 1;
+  padding: 80px 60px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(0, 255, 157, 0.1);
+  background: linear-gradient(180deg, rgba(0, 255, 157, 0.05) 0%, transparent 100%);
+}
+
+.rightColumn {
+  flex: 1.2;
+  padding: 80px 60px;
+  position: relative;
+}
+
+.timeCode {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+
+.name::after {
+  content: 'PRF-01X: INITIALIZED';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin: 16px 0 40px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contactInfo {
+  margin-top: 40px;
+  position: relative;
+}
+
+.contactInfo::before {
+  content: 'CONTACT:SYS';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 1rem;
+  color: var(--color-secondary);
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover {
+  color: var(--color-accent);
+}
+
+.contactItem svg {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.education {
+  margin-top: 60px;
+  position: relative;
+}
+
+.education::before {
+  content: 'EDU:DATA';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.educationItem {
+  margin: 24px 0;
+  padding: 20px;
+  background: rgba(0, 255, 157, 0.05);
+  border: 1px solid rgba(0, 255, 157, 0.1);
+  transition: all 0.3s ease;
+}
+
+.educationItem:hover {
+  transform: translateX(10px);
+  background: rgba(0, 255, 157, 0.1);
+}
+
+.educationItem h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.educationItem p {
+  color: var(--color-secondary);
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.experience {
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.experience::before {
+  content: 'EXP:MAIN';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.experienceItem {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: var(--color-card);
+  border: 1px solid rgba(0, 255, 157, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.experienceItem::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+}
+
+.experienceItem::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--color-accent);
+  border-right: 2px solid var(--color-accent);
+}
+
+.experienceItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 255, 157, 0.1);
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.experienceTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experienceCompany {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin: 8px 0;
+  font-family: var(--font-mono);
+}
+
+.experiencePeriod {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  font-family: var(--font-mono);
+}
+
+.experienceLocation {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  padding: 4px 12px;
+  background: rgba(0, 255, 157, 0.1);
+  border: 1px solid var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.responsibilities {
+  margin-top: 24px;
+}
+
+.responsibilities h4 {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.responsibilitiesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilitiesList li {
+  margin: 12px 0;
+  padding-left: 24px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.responsibilitiesList li:hover {
+  transform: translateX(10px);
+}
+
+.responsibilitiesList li::before {
+  content: "→";
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+}
+
+.techStack {
+  margin-top: 32px;
+  position: relative;
+}
+
+.techStack::before {
+  content: 'TECH:STACK';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.techStack h4 {
+  font-size: 1rem;
+  margin: 0 0 16px;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techItem {
+  padding: 6px 12px;
+  background: rgba(0, 255, 157, 0.1);
+  border: 1px solid var(--color-accent);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  transition: all 0.3s ease;
+}
+
+.techItem:hover {
+  background: var(--color-accent);
+  color: var(--color-background);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .portfolioContainer {
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    position: relative;
+    height: auto;
+    padding: 40px 24px;
+  }
+
+  .rightColumn {
+    padding: 40px 24px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .experienceItem {
+    padding: 24px;
+  }
+} 

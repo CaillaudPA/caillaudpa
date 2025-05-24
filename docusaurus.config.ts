@@ -51,44 +51,37 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     image: 'img/social-card.jpg',
     navbar: {
+      style: 'dark',
+      hideOnScroll: true,
       title: 'Pierre-Antoine Caillaud',
       logo: {
         alt: 'Pierre-Antoine Caillaud Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon-512.png',
       },
       items: [
         {
-          to: '/',
-          label: 'Home',
-          position: 'left',
-          activeBaseRegex: '^/$',
+          href: 'https://github.com/caillaudpa',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
         {
-          to: '/experience',
-          label: 'Experience',
-          position: 'left',
-        },
-        {
-          to: '/skills',
-          label: 'Skills',
-          position: 'left',
-        },
-        {
-          to: '/contact',
-          label: 'Contact',
-          position: 'left',
+          href: 'https://linkedin.com/in/pierre-antoine-caillaud',
+          position: 'right',
+          className: 'header-linkedin-link',
+          'aria-label': 'LinkedIn Profile',
         },
         {
           type: 'localeDropdown',
           position: 'right',
-        },
-        {
-          href: 'https://github.com/caillaudpa',
-          label: 'GitHub',
-          position: 'right',
+          className: 'header-language-link',
         },
       ],
     },
@@ -96,33 +89,37 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Connect',
+          title: 'CONNECT:SYS',
           items: [
             {
               label: 'LinkedIn',
               href: 'https://linkedin.com/in/pierre-antoine-caillaud',
+              className: 'footer-link-item',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/caillaudpa',
+              className: 'footer-link-item',
             },
           ],
         },
         {
-          title: 'Contact',
+          title: 'CONTACT:DATA',
           items: [
             {
               label: 'Email',
               href: 'mailto:pierre-antoine.caillaud@outlook.com',
+              className: 'footer-link-item',
             },
             {
               label: 'Phone',
               href: 'tel:+33645814157',
+              className: 'footer-link-item',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Pierre-Antoine Caillaud. Built with Docusaurus.`,
+      copyright: `SYS:${new Date().getFullYear()} // Pierre-Antoine Caillaud // END:TRANSMISSION`,
     },
     prism: {
       theme: prismThemes.github,

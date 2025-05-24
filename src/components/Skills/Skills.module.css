@@ -1,0 +1,223 @@
+.skillsSection {
+  padding: 80px 0;
+  position: relative;
+  background: var(--color-card);
+  border-top: 1px solid var(--color-accent);
+  overflow: hidden;
+}
+
+.skillsSection::before {
+  content: 'SKILL:MATRIX';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  z-index: 2;
+}
+
+.matrixBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 157, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: matrix-rain 20s linear infinite;
+  pointer-events: none;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.skillCard {
+  position: relative;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--color-accent);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(0, 255, 157, 0.05) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.skillCard:hover::before {
+  transform: translateX(100%);
+}
+
+.skillCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 10px 30px rgba(0, 255, 157, 0.1),
+    0 0 0 1px var(--color-accent);
+}
+
+.skillTitle {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.skillTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.skillCard:hover .skillTitle::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.skillLevel {
+  margin: 15px 0;
+  position: relative;
+}
+
+.skillLevelBar {
+  height: 4px;
+  background: rgba(0, 255, 157, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillLevelFill {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--color-accent-alt) 100%
+  );
+  transition: width 1s ease;
+}
+
+.skillLevelFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  opacity: 0.5;
+  filter: blur(3px);
+}
+
+.skillDescription {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.rateInfo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  padding: 8px 16px;
+  border: 1px solid var(--color-accent);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.japaneseText {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+  letter-spacing: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.skillCard:hover .japaneseText {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  
+  .japaneseText {
+    display: none;
+  }
+  
+  .rateInfo {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 20px auto;
+    width: fit-content;
+  }
+} 
